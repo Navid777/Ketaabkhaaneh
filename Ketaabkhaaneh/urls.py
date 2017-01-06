@@ -22,6 +22,8 @@ import bookreview.views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^home/$', bookreview.views.home),
+    url(r'^article/$', bookreview.views.article),
+    url(r'^articles/$', bookreview.views.articles),
 ]
 
 if settings.DEBUG:

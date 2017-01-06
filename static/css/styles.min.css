@@ -466,7 +466,7 @@ a:hover,a:focus {
 	clear:both
 }
 p {
-	margin:0 0 10px
+	margin:0 0 10px;
 }
 .lead {
 	margin-bottom:20px;
@@ -3555,13 +3555,13 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini {
 	display:inline
 }
 .pagination ul>li>a,.pagination ul>li>span {
-	float:left;
+	float:right;
 	padding:4px 12px;
 	line-height:20px;
 	text-decoration:none;
 	background-color:white;
 	border:1px solid #dddddd;
-	border-left-width:0
+	border-right-width:0
 }
 .pagination ul>li>a:hover,.pagination ul>li>a:focus,.pagination ul>.active>a,.pagination ul>.active>span {
 	background-color:whitesmoke
@@ -3576,21 +3576,21 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini {
 	cursor:default
 }
 .pagination ul>li:first-child>a,.pagination ul>li:first-child>span {
-	border-left-width:1px;
-	-webkit-border-top-left-radius:4px;
-	-moz-border-radius-topleft:4px;
-	border-top-left-radius:4px;
-	-webkit-border-bottom-left-radius:4px;
-	-moz-border-radius-bottomleft:4px;
-	border-bottom-left-radius:4px
-}
-.pagination ul>li:last-child>a,.pagination ul>li:last-child>span {
+	border-right-width:1px;
 	-webkit-border-top-right-radius:4px;
 	-moz-border-radius-topright:4px;
 	border-top-right-radius:4px;
 	-webkit-border-bottom-right-radius:4px;
 	-moz-border-radius-bottomright:4px;
 	border-bottom-right-radius:4px
+}
+.pagination ul>li:last-child>a,.pagination ul>li:last-child>span {
+	-webkit-border-top-left-radius:4px;
+	-moz-border-radius-topleft:4px;
+	border-top-left-radius:4px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-bottomleft:4px;
+	border-bottom-left-radius:4px
 }
 .pagination-centered {
 	text-align:center
@@ -5621,9 +5621,9 @@ p.pdf-reader {
 	font-size:20px
 }
 p.article-issue {
-	font-family:BenchNine, Helvetica, Arial, sans-serif;
-	font-size:20px;
-	margin-bottom:15px
+	font-family:IRANSans, Helvetica, Arial, sans-serif;
+	font-size:14px;
+	margin-bottom:10px
 }
 .search-box {
 	font-size:14px;
@@ -5727,7 +5727,7 @@ li.current {
 	margin-bottom:20px
 }
 .pagination {
-	font-family:Helvetica, Arial, sans-serif;
+	font-family:IRANSans, Arial, sans-serif;
 	margin-left:auto;
 	margin-right:auto;
 	text-align:center;
@@ -5779,10 +5779,10 @@ ul.thumbnails {
 	margin-top:10px
 }
 h1 {
-	font-family:BenchNine, Helvetica, Arial, sans-serif;
+	font-family:IRANSans, Helvetica, Arial, sans-serif;
 	font-weight:700;
-	font-size:48px;
-	text-align:left;
+	font-size:35px;
+	text-align:right;
 	padding:0px 0px 5px 0px;
 	margin:-5px 0px 0px 0px;
 	text-transform:uppercase
@@ -5900,17 +5900,19 @@ li.recent-posts a:hover {
 }
 .book-details .book-data {
 	margin-left:20px;
-	text-align:left;
+	text-align:right;
+	direction: rtl;
 	color:#777777;
-	font-family:"Droid Serif", "Times New Roman", Times, serif;
-	font-size:12px;
+	font-family:IRANSans, "Times New Roman", Times, serif;
+	font-size:10px;
 	line-height:15px
 }
 .book-details .book-data p.author-small {
 	font-style:italic
 }
 .book-details .book-data h4 {
-	color:black
+	color:black;
+	text-align: right;
 }
 .cover img {
 	-webkit-box-shadow:3px 3px 5px 1px rgba(0,0,0,0.2);
@@ -6216,7 +6218,7 @@ a.bp-button {
 	margin-bottom:10px
 }
 .facets p {
-	font-family:Helvetica, Arial, sans-serif;
+	font-family:IRANSans, Arial, sans-serif;
 	font-weight:bold;
 	margin-bottom:2px
 }
@@ -6226,7 +6228,7 @@ a.bp-button {
 .facets ul li {
 	list-style:none;
 	padding-left:22px;
-	text-indent:-22px
+	text-indent:22px
 }
 a.bp-button-left {
 	padding:5px 12px 3px 12px;
@@ -6244,7 +6246,8 @@ a.bp-button-left {
 	padding:20px 10px 10px 10px;
 	margin:0;
 	border-top:1px solid #c1c0aa;
-	border-bottom:1px solid #c1c0aa
+	border-bottom:1px solid #c1c0aa;
+	direction: rtl;
 }
 .article-header h2 {
 	text-transform:none;
@@ -6253,7 +6256,8 @@ a.bp-button-left {
 }
 .article-body {
 	padding:10px 10px 0px 10px;
-	margin:0
+	margin:0;
+	direction: rtl;
 }
 .article-body blockquote {
 	padding:0px 0px 0px 10px;
