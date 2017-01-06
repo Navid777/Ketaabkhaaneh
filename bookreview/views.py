@@ -12,3 +12,7 @@ def article(request):
 def articles(request):
     return render(request, 'articles.html')
 
+
+def text(request):
+    return render(request, 'text.html')
+

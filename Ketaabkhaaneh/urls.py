@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^home/$', bookreview.views.home),
     url(r'^article/$', bookreview.views.article),
     url(r'^articles/$', bookreview.views.articles),
+    url(r'^text/$', bookreview.views.text),
 ]
 
 if settings.DEBUG:
