@@ -1,0 +1,13 @@
+[
+    {% for i in images %}
+    {
+			  "type": "image",
+        "title": "{{ i.title }}",
+        "thumbnail": "{{ i.thumbnail.url }}",
+				{% comment %}
+				remember to add other fields such as alttext
+				{% endcomment %}
+				"url": "{{ i.image.url }}"
+    }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+]

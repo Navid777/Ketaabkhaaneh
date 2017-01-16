@@ -1,0 +1,32 @@
+body {
+  position: relative;
+  width: 100%;
+}
+
+#edit {
+  position: absolute;
+  top: 0;
+  left: 1%;
+  width: 78%;
+}
+
+#insert {
+  position: absolute;
+  top: 0;
+  left: 81%;
+  width: 18%;
+}
+
+#insert .buttons {
+  text-align: center;
+}
+
+#insert .content > div {
+	margin: 5px;
+	text-align: right;
+	border-bottom: 1px solid black;
+}
+
+#insert #page_actions {
+	display: none;
+}

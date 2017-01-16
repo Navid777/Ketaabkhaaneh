@@ -13,19 +13,25 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf import settings
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
 from django.conf.urls.static import static
-import bookreview.views
+import bookreview.views as views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^home/$', bookreview.views.home),
-    url(r'^article/$', bookreview.views.article),
-    url(r'^articles/$', bookreview.views.articles),
-    url(r'^text/$', bookreview.views.text),
+    url(r'^home/$', views.home),
+    url(r'^article/$', views.article),
+    url(r'^articles/$', views.articles),
+    url(r'^text/$', views.text),
+
+    # Editor URLs
+    url(r'^text_editor/$', views.text_editor),
+    url(r'^text_editor/get_images/(\d+)/$', views.text_editor_get_images),
+    url(r'^text_editor/get_videos/(\d+)/$', views.text_editor_get_videos),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,13 @@
+[
+    {% for v in videos %}
+    {
+			  "type": "video",
+        "title": "{{ v.title }}",
+        "thumbnail": "{{ v.thumbnail.url }}",
+				{% comment %}
+				remember to add other fields such as alttext
+				{% endcomment %}
+				"url": "{{ v.video.url }}"
+    }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+]
