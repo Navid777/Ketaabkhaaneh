@@ -205,17 +205,9 @@ class Video(models.Model):
         return self.title
 
 
-class FormattedText(models.Model):
-    source = models.TextField()
-    images = models.ManyToManyField(Image, related_name='texts')
-    videos = models.ManyToManyField(Video, related_name='texts')
-    date_added = models.DateTimeField(default=datetime.datetime.now)
-    deleted = models.BooleanField(default=False)
-
-
 class Article(models.Model):
     title = models.CharField(max_length=1024)
-    text = models.OneToOneField(FormattedText, related_name='article')
+    text = models.TextField()
     tags = models.ManyToManyField(Tag, related_name='articles')
     reference = models.ForeignKey(Reference, related_name='articles')
     adl_references = models.ForeignKey(Reference, related_name='adl_articles')
@@ -246,6 +238,5 @@ admin.site.register(Film)
 admin.site.register(Tag)
 admin.site.register(Image)
 admin.site.register(Video)
-admin.site.register(FormattedText)
 admin.site.register(Article)
 admin.site.register(Comment)
