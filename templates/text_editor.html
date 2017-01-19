@@ -1,12 +1,36 @@
-<!DOCTYPE html>
-<html>
-	<head>
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls %}
+
+{% block extrahead %}
 		<link rel="stylesheet" href="{{ MEDIA_URL }}editor/trumbowyg.css" />
 		<link rel="stylesheet" href="{{ MEDIA_URL }}editor/styles.css" />
-	</head>
-	<body>
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+  <a href="{% url 'admin:index' %}">{% trans "Home" %}</a>
+  &rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">
+    {{ opts.app_config.verbose_name }}
+  </a>
+  &rsaquo; <a href="{% url opts|admin_urlname:'changelist' %}">
+    {{ module_name }}
+  </a>
+  &rsaquo; <a href="{% url opts|admin_urlname:'change' object.pk|admin_urlquote %}">
+    {{ object|truncatewords:"18" }}
+  </a>
+  &rsaquo; {% trans 'Edit Text' %}
+</div>
+{% endblock %}
+
+{% block content_title %}{% endblock %}
+
+{% block content %}
 		<div id="edit">
-      <div id="editor"></div>
+      <div id="editor">{{ object.text|safe }}</div>
+    </div>
+    <div id="save">
+      <span id="save_message"></span>
+      <button id="save_button">Save</button>
     </div>
     <div id="insert">
 			<div class="buttons">
@@ -24,5 +48,4 @@
 		<script type="text/javascript" src="{{ MEDIA_URL }}editor/trumbowyg.js"></script>
 		<script type="text/javascript" src="{{ MEDIA_URL }}editor/langs/fa.js"></script>
 		<script type="text/javascript" src="{{ MEDIA_URL }}editor/scripts.js"></script>
-	</body>
-</html>
+{% endblock %}

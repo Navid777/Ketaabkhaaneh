@@ -25,11 +25,6 @@ urlpatterns = [
     url(r'^article/$', views.article),
     url(r'^articles/$', views.articles),
     url(r'^text/$', views.text),
-
-    # Editor URLs
-    url(r'^text_editor/$', views.text_editor),
-    url(r'^text_editor/get_images/(\d+)/$', views.text_editor_get_images),
-    url(r'^text_editor/get_videos/(\d+)/$', views.text_editor_get_videos),
 ]
 
 if settings.DEBUG:

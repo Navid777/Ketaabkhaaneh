@@ -51,8 +51,8 @@ Data.prototype.renderItemForEditor = function(item) {
 };
 
 window.app = {
-	Image: new Data('get_images', 'image'),
-	Video: new Data('get_videos', 'video'),
+	Image: new Data('images', 'image'),
+	Video: new Data('videos', 'video'),
 	current: null,
 	show_images: function() {
 		app.current = app.Image;
@@ -74,6 +74,22 @@ $(function() {
   $("#editor").trumbowyg({
     lang: 'fa',
 		autogrow: true
+  });
+  $("#save_button").on('click', function() {
+    $("#save_message").text('Saving...');
+    $.ajax({
+      type: "post",
+      url: "save/",
+      data: {
+        'source': $("#editor").trumbowyg('html')
+      },
+      success: function() {
+        $("#save_message").text('');
+      },
+      error: function() {
+        $("#save_message").text('Error!');
+      }
+    });
   });
 	$("#show_images").on('click', app.show_images);
 	$("#show_videos").on('click', app.show_videos);

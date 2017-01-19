@@ -1,24 +1,42 @@
-body {
-  position: relative;
-  width: 100%;
-}
-
-#edit {
-  position: absolute;
-  top: 0;
-  left: 1%;
-  width: 78%;
-}
-
-#insert {
-  position: absolute;
-  top: 0;
-  left: 81%;
-  width: 18%;
-}
-
 #insert .buttons {
   text-align: center;
+}
+#insert button, #save button {
+  font-size: 13px;
+  vertical-align: middle;
+  font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px 15px;
+  height: 35px;
+  line-height: 15px;
+  font-weight: 400;
+  border: none;
+  margin: 0 0 0 8px;
+  text-transform: uppercase;
+}
+
+#insert button {
+  background: #79aec8;
+}
+#insert button:hover {
+  background: #609ab6;
+}
+
+#save button {
+  background: #417690;
+}
+#save button:hover {
+  background: #205067;
+}
+
+#save {
+  text-align: right;
+}
+
+#insert .content {
+  min-height: 40px;
 }
 
 #insert .content > div {

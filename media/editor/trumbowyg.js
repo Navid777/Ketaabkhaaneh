@@ -987,6 +987,7 @@ jQuery.trumbowyg = {
                 t.syncCode(true);
                 return t;
             }
+            t.semanticCode(false, true);
             return t.$ta.val();
         },
         syncTextarea: function () {

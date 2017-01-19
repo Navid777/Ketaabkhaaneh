@@ -19,17 +19,3 @@ def text(request):
 
 def text_editor(request):
     return render(request, 'text_editor.html', {})
-
-def text_editor_get_images(request, page):
-    page = int(page)
-    images = Image.objects.all().order_by('-date_added')[page*5:page*5+4];
-    return render(request, 'image_page.json', {
-        'images': images,
-    })
-
-def text_editor_get_videos(request, page):
-    page = int(page)
-    videos = Video.objects.all().order_by('-date_added')[page*5:page*5+4];
-    return render(request, 'video_page.json', {
-        'videos': videos,
-    })

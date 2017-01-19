@@ -33,8 +33,7 @@ class Reference(models.Model):
 class Person(models.Model):
     name = models.CharField(max_length=256)
     original_name = models.CharField(max_length=256, null=True, blank=True)
-    #TODO: remove default when admin is fixed
-    reference = models.OneToOneField(Reference, related_name="person", blank=True)
+    reference = models.OneToOneField(Reference, related_name="person")
     date_added = models.DateTimeField(default=datetime.datetime.now)
     deleted = models.BooleanField(default=False)
 
@@ -53,8 +52,7 @@ class Book(models.Model):
     author = models.ForeignKey(Person, related_name='books')
     translator = models.ForeignKey(Person, null=True, blank=True,
                                    related_name='books_translated')
-    #TODO: remove default when admin is fixed
-    reference = models.OneToOneField(Reference, related_name='book', blank=True)
+    reference = models.OneToOneField(Reference, related_name='book')
     date_added = models.DateTimeField(default=datetime.datetime.now)
     deleted = models.BooleanField(default=False)
 
@@ -74,8 +72,7 @@ class Film(models.Model):
     writer = models.ForeignKey(Person, null=True, blank=True,
                                related_name='films_written')
     actors = models.ManyToManyField(Person, related_name='films_acted')
-    #TODO: remove when admin is fixed
-    reference = models.OneToOneField(Reference, related_name='film', blank=True)
+    reference = models.OneToOneField(Reference, related_name='film')
     date_added = models.DateTimeField(default=datetime.datetime.now)
     deleted = models.BooleanField(default=False)
 
@@ -229,14 +226,3 @@ class Comment(models.Model):
         if len(self.text) > 30:
             return self.name + ": " + self.text[:27] + "..."
         return self.name + ": " + self.text
-
-
-admin.site.register(Reference)
-admin.site.register(Person)
-admin.site.register(Book)
-admin.site.register(Film)
-admin.site.register(Tag)
-admin.site.register(Image)
-admin.site.register(Video)
-admin.site.register(Article)
-admin.site.register(Comment)
