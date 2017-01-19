@@ -22,7 +22,7 @@ import bookreview.views as views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^home/$', views.home),
-    url(r'^article/$', views.article),
+    url(r'^article/(\d+)/$', views.article),
     url(r'^articles/$', views.articles),
     url(r'^text/$', views.text),
 ]

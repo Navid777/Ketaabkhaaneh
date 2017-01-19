@@ -204,6 +204,7 @@ class Video(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=1024)
+    secondary_title = models.CharField(max_length=1024, null=True, blank=True)
     text = models.TextField()
     tags = models.ManyToManyField(Tag, related_name='articles')
     reference = models.ForeignKey(Reference, related_name='articles')
