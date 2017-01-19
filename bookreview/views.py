@@ -16,6 +16,3 @@ def articles(request):
 
 def text(request):
     return render(request, 'text.html')
-
-def text_editor(request):
-    return render(request, 'text_editor.html', {})
