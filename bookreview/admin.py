@@ -83,7 +83,7 @@ class ArticleAdmin(admin.ModelAdmin):
             'images': images,
         })
 
-    def edit_videos(self, request, id, videos):
+    def edit_videos(self, request, id, page):
         page = int(page)
         videos = Video.objects.all().order_by('-date_added')[page*5:page*5+4];
         return TemplateResponse(request, 'video_page.json', {
