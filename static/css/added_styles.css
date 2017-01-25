@@ -1,3 +1,29 @@
+body {
+	margin-left:auto;
+	margin-right:auto;
+	max-width:1170px
+}
+p.pdf-reader {
+	font-family:BenchNine, Helvetica, Arial, sans-serif;
+	font-size:20px
+}
+p.article-issue {
+	font-family:IRANSans, Helvetica, Arial, sans-serif;
+	font-size:14px;
+	margin-bottom:10px
+}
+.search-box {
+	font-size:14px;
+	float:right;
+	display:block
+}
+.search-form {
+	margin-bottom:0px
+}
+.input-group {
+	margin-bottom:0px;
+	padding-bottom:0px
+}
 .query-input {
 	margin:0px 0px 0px 0px;
 	padding:0px 0px 0px 0px;
@@ -5,8 +31,8 @@
 }
 .inline-ad {
 	text-align:center;
-	margin-left:auto;
 	margin-right:auto;
+	margin-left:auto;
 	width:100%;
 	margin-top:0px;
 	margin-bottom:0px
@@ -30,8 +56,8 @@
 }
 .inline-ad-blog {
 	text-align:center;
-	margin-left:auto;
 	margin-right:auto;
+	margin-left:auto;
 	width:100%;
 	margin-top:20px;
 	margin-bottom:0px
@@ -46,15 +72,15 @@ ul.admin-links {
 	font-family:Helvetica, Arial, sans-serif
 }
 ul.admin-links li {
-	border-right:1px solid #c1c0aa;
+	border-left:1px solid #c1c0aa;
 	list-style:none;
 	display:inline-block;
-	padding-left:5px;
-	padding-right:10px
-}
-ul.admin-links .left-bar {
-	border-left:1px solid #c1c0aa;
+	padding-right:5px;
 	padding-left:10px
+}
+ul.admin-links .right-bar {
+	border-right:1px solid #c1c0aa;
+	padding-right:10px
 }
 span.input-group-addon {
 	background:#444444 !important;
@@ -88,8 +114,8 @@ li.current {
 }
 .pagination {
 	font-family:IRANSans, Arial, sans-serif;
-	margin-left:auto;
 	margin-right:auto;
+	margin-left:auto;
 	text-align:center;
 	font-size:12px
 }
@@ -100,7 +126,7 @@ li.current {
 	color:#c00000 !important
 }
 ul.bp-navtext {
-	float:right;
+	float:left;
 	font-family:IRANSans, Helvetica, Arial, sans-serif;
 	font-weight:normal;
 	font-size:16px;
@@ -109,11 +135,11 @@ ul.bp-navtext {
 }
 ul.bp-navtext li {
 	line-height:36px;
-	border-right:1px solid #a70000;
-	margin-left:0px
+	border-left:1px solid #a70000;
+	margin-right:0px
 }
 ul.bp-navtext li.nav-last {
-	border-right:1px solid #a70000
+	border-left:1px solid #a70000
 }
 img.navbar-brand, img.brand {
 	width:156px;
@@ -124,7 +150,7 @@ img.navbar-brand, img.brand {
 img.issue-cover-small {
 	height:300px;
 	width:225px;
-	margin-left:20px
+	margin-right:20px
 }
 li.issue-archive {
 	width:210px;
@@ -142,7 +168,7 @@ h1 {
 	font-family:IRANSans, Helvetica, Arial, sans-serif;
 	font-weight:700;
 	font-size:35px;
-	text-align:right;
+	text-align:left;
 	padding:0px 0px 5px 0px;
 	margin:-5px 0px 0px 0px;
 	text-transform:uppercase
@@ -151,6 +177,7 @@ h2 {
 	font-family:IRANSans, Helvetica, Arial, sans-serif;
 	font-weight:700;
 	font-size:18px;
+	text-align: left;
 	padding:0px 0px 5px 0px;
 	margin:-5px 0px 0px 0px;
 	text-transform:uppercase;
@@ -176,8 +203,8 @@ h4 {
 	text-transform:uppercase
 }
 .featured-person {
-	margin-left:auto;
 	margin-right:auto;
+	margin-left:auto;
 	text-align:center
 }
 .featured-person img {
@@ -199,7 +226,7 @@ ol {
 	list-style-position:outside
 }
 p.genre-links {
-	text-align:right;
+	text-align:left;
 	font-family:IRANSans, Helvetica, Arial, sans-serif;
 	font-weight:400;
 	font-size:14px;
@@ -259,9 +286,8 @@ li.recent-posts a:hover {
 	border:1px solid #c1c0aa
 }
 .book-details .book-data {
-	margin-left:20px;
-	text-align:right;
-	direction: rtl;
+	margin-right:20px;
+	text-align:left;
 	color:#777777;
 	font-family:IRANSans, "Times New Roman", Times, serif;
 	font-size:10px;
@@ -272,7 +298,6 @@ li.recent-posts a:hover {
 }
 .book-details .book-data h4 {
 	color:black;
-	text-align: right;
 }
 .cover img {
 	-webkit-box-shadow:3px 3px 5px 1px rgba(0,0,0,0.2);
@@ -298,8 +323,6 @@ li.recent-posts a:hover {
 	background:white;
 	border:1px solid #c1c0aa;
 	font-size:14px;
-    text-align: right;
-    direction: rtl;
 }
 .article-sidebar-well {
 	margin:0px;
@@ -327,6 +350,8 @@ li.recent-posts a:hover {
 }
 .content-well {
 	padding:0px;
+	padding-left: 15px;
+	padding-right: 15px;
 	padding-top:20px;
 	padding-bottom:20px;
 	margin-bottom:20px;
@@ -340,8 +365,8 @@ hr.divider {
 }
 .social-icons {
 	color:#666666;
-	margin-left:5px;
 	margin-right:5px;
+	margin-left:5px;
 	margin-bottom:0px;
 	padding-bottom:0px;
 	font-size:30px;
@@ -353,8 +378,8 @@ hr.divider {
 }
 .social-icons-large {
 	color:#666666;
-	margin-left:20px;
-	margin-right:5px;
+	margin-right:20px;
+	margin-left:5px;
 	margin-bottom:0px;
 	padding-bottom:0px;
 	font-size:40px;
@@ -373,26 +398,26 @@ hr.divider {
 	margin-top:0px;
 	margin-bottom:20px;
 	border-top:1px solid #c1c0aa;
-	border-left:1px solid #c1c0aa;
 	border-right:1px solid #c1c0aa;
+	border-left:1px solid #c1c0aa;
 	font-family:BenchNine, Helvetica, Arial, sans-serif;
 	font-weight:400;
 	font-size:20px;
 	line-height:21px;
 	padding:5px;
 	text-transform:uppercase;
-	-webkit-border-top-right-radius:10px;
-	-moz-border-radius-topright:10px;
-	border-top-right-radius:10px;
 	-webkit-border-top-left-radius:10px;
 	-moz-border-radius-topleft:10px;
 	border-top-left-radius:10px;
-	-webkit-border-bottom-right-radius:10px;
-	-moz-border-radius-bottomright:10px;
-	border-bottom-right-radius:10px;
+	-webkit-border-top-right-radius:10px;
+	-moz-border-radius-topright:10px;
+	border-top-right-radius:10px;
 	-webkit-border-bottom-left-radius:10px;
 	-moz-border-radius-bottomleft:10px;
 	border-bottom-left-radius:10px;
+	-webkit-border-bottom-right-radius:10px;
+	-moz-border-radius-bottomright:10px;
+	border-bottom-right-radius:10px;
 	-webkit-box-shadow:2px 2px 2px 1px rgba(0,0,0,0.2);
 	-moz-box-shadow:2px 2px 2px 1px rgba(0,0,0,0.2);
 	box-shadow:2px 2px 2px 1px rgba(0,0,0,0.2)
@@ -437,8 +462,8 @@ hr.divider {
 	margin-top:0px;
 	margin-bottom:0px;
 	border-top:1px solid #c1c0aa;
-	border-left:1px solid #c1c0aa;
 	border-right:1px solid #c1c0aa;
+	border-left:1px solid #c1c0aa;
 	font-family:BenchNine, Helvetica, Arial, sans-serif;
 	font-weight:400;
 	font-size:20px;
@@ -447,7 +472,7 @@ hr.divider {
 	text-transform:uppercase
 }
 .sidebar-footer {
-	text-align:left;
+	text-align:right;
 	font-family:IRANSans, Helvetica, Arial, sans-serif;
 	font-weight:400;
 	font-size:16px;
@@ -461,16 +486,14 @@ hr.divider {
 	margin-top:0px;
 	margin-bottom:0px;
 	border-top:1px solid #c1c0aa;
-	border-left:1px solid #c1c0aa;
 	border-right:1px solid #c1c0aa;
+	border-left:1px solid #c1c0aa;
 	font-family:IRANSans, Helvetica, Arial, sans-serif;
 	font-weight:400;
 	font-size:17px;
 	line-height:21px;
 	padding:10px 20px;
 	text-transform:uppercase;
-    text-align: right;
-    direction: rtl;
 }
 .sidebar-body {
 	padding:0px 20px 0px 20px;
@@ -479,7 +502,6 @@ hr.divider {
 	margin-bottom:20px;
 	border:1px solid #c1c0aa;
 	font-size:11px;
-    direction: rtl
 }
 .bookjacket {
 	background:#dddddd
@@ -495,7 +517,7 @@ hr.divider {
 .read-full {
 	font-family:IRANSans, Helvetica, Arial, sans-serif;
 	color:#aa2624;
-	text-align:left;
+	text-align:right;
 	text-transform:uppercase;
 	font-weight:400;
 	font-size:14px;
@@ -509,7 +531,7 @@ p.author-small {
 	font-size:12px;
 	padding-top:-4px;
 	margin-bottom:10px;
-	text-align:right;
+	text-align:left;
 	font-style:italic
 }
 p.contributor-small {
@@ -524,7 +546,6 @@ p.contributor-small {
 }
 .blog-preview h3 {
 	font-size:22px;
-    direction: rtl;
 }
 .article-info h2 a:link,.article-info h4 a:link {
 	color:black
@@ -557,7 +578,7 @@ a.bp-button {
 	font-size:20px;
 	text-transform:uppercase;
 	position:absolute;
-	right:0px;
+	left:0px;
 	bottom:30px;
 	border:1px solid white
 }
@@ -583,14 +604,14 @@ a.bp-button {
 	margin-bottom:2px
 }
 .facets ul {
-	margin-left:10px
+	margin-right:10px
 }
 .facets ul li {
 	list-style:none;
-	padding-left:22px;
+	padding-right:22px;
 	text-indent:22px
 }
-a.bp-button-left {
+a.bp-button-right {
 	padding:5px 12px 3px 12px;
 	background-color:#aa2624;
 	color:white;
@@ -599,7 +620,7 @@ a.bp-button-left {
 	font-size:20px;
 	text-transform:uppercase;
 	position:absolute;
-	left:0px;
+	right:0px;
 	bottom:20px
 }
 .article-header {
@@ -607,7 +628,6 @@ a.bp-button-left {
 	margin:0;
 	border-top:1px solid #c1c0aa;
 	border-bottom:1px solid #c1c0aa;
-	direction: rtl;
 }
 .article-header h2 {
 	text-transform:none;
@@ -617,7 +637,6 @@ a.bp-button-left {
 .article-body {
 	padding:10px 10px 0px 10px;
 	margin:0;
-	direction: rtl;
 }
 .article-body blockquote {
 	padding:0px 0px 0px 10px;
@@ -626,7 +645,7 @@ a.bp-button-left {
 	color:#555555
 }
 .affiliate-links-small {
-	text-align:left;
+	text-align:right;
 	color:#666666
 }
 .affiliate-links-small img {
@@ -654,11 +673,11 @@ a.bp-button-left {
 	margin-bottom:20px
 }
 .blog-body img {
-	margin-right:20px;
+	margin-left:20px;
 	margin-bottom:20px;
 	margin-top:5px;
-	float:left;
-	clear:left;
+	float:right;
+	clear:right;
 	-webkit-box-shadow:3px 3px 5px 1px rgba(0,0,0,0.2);
 	-moz-box-shadow:3px 3px 5px 1px rgba(0,0,0,0.2);
 	box-shadow:3px 3px 5px 1px rgba(0,0,0,0.2)
@@ -678,20 +697,19 @@ footer {
 	background-color:#c00000;
 	margin-top:0px;
 	padding-top:15px;
-	padding-right:30px;
+	padding-left:30px;
 	border-top:1px solid #c1c0aa;
 	color:white;
-	text-align:left;
+	text-align:right;
 	font-family:IRANSans, Arial, sans-serif;
 	font-weight:400;
 	font-size:11px;
-    direction: rtl;
 }
 footer h3 {
 	font-family:IRANSans, Helvetica, Arial, sans-serif;
 	color:white;
 	font-size:18px;
-	text-align:left;
+	text-align:right;
 	text-transform:uppercase;
 	padding-top:10px
 }
@@ -713,7 +731,7 @@ footer a:visited {
 footer a:hover {
 	color:white !important
 }
-.copyright {
+.copyleft {
 	margin:10px 10px 0 10px;
 	padding-top:10px;
 	padding-bottom:20px;
@@ -729,8 +747,8 @@ footer a:hover {
 	clear:both
 }
 .addthis {
-	float:left;
-	padding-right:10px
+	float:right;
+	padding-left:10px
 }
 .addthis span {
 	margin-bottom:4px;
@@ -744,8 +762,7 @@ footer a:hover {
 	text-transform:uppercase;
 	color:#666666;
 	display:block;
-	float:right;
-    direction: rtl;
+	float:left;
 }
 .breadcrumbs p {
 	margin-top:7px;
@@ -762,14 +779,14 @@ footer a:hover {
 	width:180px;
 	padding:20px 0 0 0
 }
-.issue-masthead-left {
+.issue-masthead-right {
 	text-align:center;
 	padding:0 10px 0 0
 }
 h2.issue-masthead {
 	padding:0 0 15px 0
 }
-.issue-masthead-right {
+.issue-masthead-left {
 	height:100%;
 	padding:0 0 0 0
 }
@@ -784,14 +801,6 @@ h2.issue-masthead {
 	font-size:28px;
 	color:black
 }
-.article-multi-list-left {
-	display:block;
-	float:left;
-	width:32%;
-	padding-right:10px;
-	padding-bottom:10px;
-	height:100%
-}
 .article-multi-list-right {
 	display:block;
 	float:right;
@@ -800,11 +809,11 @@ h2.issue-masthead {
 	padding-bottom:10px;
 	height:100%
 }
-.article-list-left {
+.article-multi-list-left {
 	display:block;
 	float:left;
-	width:30%;
-	padding-right:20px;
+	width:32%;
+	padding-right:10px;
 	padding-bottom:10px;
 	height:100%
 }
@@ -813,6 +822,14 @@ h2.issue-masthead {
 	float:right;
 	width:30%;
 	padding-left:20px;
+	padding-bottom:10px;
+	height:100%
+}
+.article-list-left {
+	display:block;
+	float:left;
+	width:30%;
+	padding-right:20px;
 	padding-bottom:10px;
 	height:100%
 }
@@ -834,43 +851,43 @@ h2.issue-masthead {
 .flex-video iframe,.flex-video object,.flex-video embed {
 	position:absolute;
 	top:0;
-	left:0;
+	right:0;
 	width:100%;
 	height:100%
 }
 .simple_form label {
-	float:left;
+	float:right;
 	width:120px;
-	text-align:right;
+	text-align:left;
 	margin:3px 10px
 }
 label.block_radio_button_collection {
-	text-align:left;
+	text-align:right;
 	padding-top:0px !important
 }
 label.line_radio_button_collection {
-	text-align:left;
+	text-align:right;
 	display:block;
-	clear:right;
+	clear:left;
 	width:75%;
-	margin-left:140px;
+	margin-right:140px;
 	padding-top:0px !important
 }
 .simple_form div.input {
 	margin-bottom:10px
 }
 .simple_form div.boolean,.simple_form input[type='submit'] {
-	margin-left:145px
+	margin-right:145px
 }
 .simple_form .error {
-	clear:left;
+	clear:right;
 	font-size:12px;
 	color:#dd0000;
 	display:block
 }
 .simple_form .help-block {
-	clear:left;
-	margin-left:145px;
+	clear:right;
+	margin-right:145px;
 	font-size:12px;
 	color:#555555;
 	display:block;
@@ -878,7 +895,7 @@ label.line_radio_button_collection {
 }
 .shipping-optional {
 	font-style:italic;
-	padding-left:10px;
+	padding-right:10px;
 	color:#555555
 }
 .carousel-caption a:link {
@@ -958,10 +975,10 @@ html[xmlns] .slides {
 	zoom:1
 }
 ul.slides {
-	padding-left:0px
+	padding-right:0px
 }
 .carousel li {
-	margin-right:0px
+	margin-left:0px
 }
 .flex-direction-nav {
 	*height:0
@@ -982,18 +999,18 @@ ul.slides {
 }
 .flex-direction-nav .flex-next {
 	background-position:100% 0;
-	right:-36px
+	left:-36px
 }
 .flex-direction-nav .flex-prev {
-	left:-36px
+	right:-36px
 }
 .flexslider:hover .flex-next {
 	opacity:0.8;
-	right:5px
+	left:5px
 }
 .flexslider:hover .flex-prev {
 	opacity:0.8;
-	left:5px
+	right:5px
 }
 .flexslider:hover .flex-next:hover,.flexslider:hover .flex-prev:hover {
 	opacity:1
@@ -1045,7 +1062,7 @@ ul.slides {
 }
 .flex-control-thumbs li {
 	width:25%;
-	float:left;
+	float:right;
 	margin:0
 }
 .flex-control-thumbs img {
@@ -1064,17 +1081,15 @@ ul.slides {
 @media screen and (max-width: 860px) {
 	.flex-direction-nav .flex-prev {
 		opacity:1;
-		left:0
+		right:0
 	}
 	.flex-direction-nav .flex-next {
 		opacity:1;
-		right:0
+		left:0
 	}
 }
 
 .footer-ul {
-    direction: rtl;
-    text-align: right;
     font-family: IRANSans;
     font-size: 12px;
 }
