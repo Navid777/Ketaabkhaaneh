@@ -14,6 +14,10 @@ a.muted:hover, a.muted:focus {
 	color: gray;
 }
 
+a.muted:hover, a.muted:focus {
+	color: gray;
+}
+
 input, button, select, textarea {
 	font-family: IRANSans, "Times New Roman", Times, serif;
 }
