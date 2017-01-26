@@ -6,6 +6,8 @@ from django.conf import settings
 from django.core.files.uploadedfile import SimpleUploadedFile
 import datetime
 import os
+import bs4
+from django.template import Template, Context
 
 
 class Reference(models.Model):
@@ -103,15 +105,12 @@ class Image(models.Model):
     deleted = models.BooleanField(default=False)
 
     def generate_thumbnail(self):
-        print "1"
         if not self.image:
             return
 
-        print "2"
         if self.thumbnail:
             return
 
-        print "3"
         from PIL import Image
         from cStringIO import StringIO
 
@@ -129,7 +128,6 @@ class Image(models.Model):
             pil_type = 'png'
             ext = 'png'
         else:
-            print "WTF: " + self.image.name
             return
 
         image = Image.open(StringIO(self.image.read()))
@@ -214,6 +212,16 @@ class Article(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def render_for_editing(self):
+        return Template(self.text).render(Context({
+            'render_type': 'edit',
+        }))
+
+    def render(self):
+        return Template(self.text).render(Context({
+            'render_type': 'publish',
+        }))
 
 
 class Comment(models.Model):

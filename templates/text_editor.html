@@ -26,7 +26,7 @@
 
 {% block content %}
 		<div id="edit">
-      <div id="editor">{{ object.text|safe }}</div>
+      <div id="editor">{{ object.render_for_editing|safe }}</div>
     </div>
     <div id="save">
       <span id="save_message"></span>

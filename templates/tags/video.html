@@ -1,0 +1,17 @@
+{% if video %}
+{% if render_type == 'edit' %}
+<img src="{{ video.thumbnail.url }}"
+     {% if height %}height="{{ height }}"{% endif %}
+     {% if width %}width="{{ width }}"{% endif %}
+     {% if style %}style="{{ style }}"{% endif %}
+     data-id="{{ video.id }}" data-type="video">
+{% elif render_type == 'publish' %}
+<video controls
+     {% if height %}height="{{ height }}"{% endif %}
+     {% if width %}width="{{ width }}"{% endif %}
+     {% if style %}style="{{ style }}"{% endif %}>
+  <source src="{{ video.video.url }}" type="video/mp4">
+  برای دیدن ویدئو لطفا بروزر خود را به‌روز کنید.
+</video>
+{% endif %}
+{% endif %}

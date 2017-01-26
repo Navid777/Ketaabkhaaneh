@@ -9,6 +9,7 @@ from django.conf.urls import url
 from django.views.decorators.csrf import csrf_exempt
 from django.template.response import TemplateResponse
 from bookreview.models import *
+import bs4
 
 @admin.register(Reference)
 class ReferenceAdmin(admin.ModelAdmin):
@@ -72,7 +73,39 @@ class ArticleAdmin(admin.ModelAdmin):
             raise Http404()
         if not self.has_change_permission(request, obj):
             raise PermissionDenied
-        obj.text = request.POST['source']
+        soup = bs4.BeautifulSoup(request.POST['source'], 'lxml')
+        for img in soup.findAll('img'):
+            if not img.has_attr('data-type'):
+                continue
+
+            template_tag = None
+            if img['data-type'] == 'image':
+                template_tag = 'render_image'
+            elif img['data-type'] == 'video':
+                template_tag = 'render_video'
+
+            if not img.has_attr('data-id') or template_tag is None:
+                img.decompose()
+                continue
+
+            tag = "{% " + template_tag + " id=" + img['data-id'] + " ";
+            for attr in ['height', 'width', 'style']:
+                if img.has_attr(attr):
+                    tag += attr + "=\"" + img[attr] + "\" ";
+                else:
+                    tag += attr + "=None ";
+            tag += "render_type=render_type %}"
+            img.replace_with(tag)
+
+        text = "{% load media_tags %}"
+        if soup.body:
+            text += soup.body.renderContents()
+        elif soup.html:
+            text += soup.html.renderContents()
+        else:
+            text += soup.renderContents()
+
+        obj.text = text
         obj.save()
         return HttpResponse()
 

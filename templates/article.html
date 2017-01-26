@@ -3,10 +3,10 @@
 {% block content %}
 <!-- Right Sidebar -->
 <div class="row">
-    <div class="col-md-10">
+    <div class="col-sm-10">
         <div class="content-well">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <div class="book-details">
                             <div class="book-cover">
                                 <img src="https://i1.bookpage.com/books/images/5d176e28d0a3eac1f17fe09da2b4f863/medium.jpg"
@@ -30,7 +30,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="hidden-sm">
+                        <div class="hidden-xs">
                             <div class="sidebar-header">	<span>
 									نقدهای مرتبط
 								</span>
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-sm-8">
                         <div class="search-bar">
                             <div class="breadcrumbs">
                                 <p>	<a href="/">خانه</a>
@@ -163,7 +163,7 @@
 {% endif %}
                             <p class="author-small">نقد کتابخانه توسط حاج غلامحسین بنا</p>
                         </div>
-                        <div class="article-body">{{ article.text|safe }}
+                        <div class="article-body">{{ article.render|safe }}
                             <!-- <div class='disqus'>
 				 <div id="disqus_thread"></div>
 				 <script type="text/javascript">
@@ -185,6 +185,6 @@ var disqus_shortname = 'bookpage'; // required: replace example with your forum 
                 </div>
             </div>
     </div>
-    <div class="col-md-2 hidden-sm"></div>
+    <div class="col-sm-2 hidden-xs"></div>
 </div>
 {% endblock %}

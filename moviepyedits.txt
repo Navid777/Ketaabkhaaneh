@@ -1,0 +1,2 @@
+.env/lib/python2.7/site-packages/moviepy/video/fx/resize.py:32: tostring -> tobytes
+.env/lib/python2.7/site-packages/moviepy/video/io/gif_writers.py:284: quantizer=quantizer -> 

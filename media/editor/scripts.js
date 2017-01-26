@@ -34,20 +34,11 @@ Data.prototype.renderItem = function(item) {
   return $el;
 };
 Data.prototype.renderItemForEditor = function(item) {
-	if (item.type == "image") {
-		var $el = $("<img/>")
-			.attr("src", item.url)
-			.attr("title", item.title);
-		return $el;
-	} else if (item.type == "video") {
-		var $el = $("<video/>")
-			.attr("controls", true);
-		$("<source/>")
-			.attr("src", item.url)
-			.attr("type", "video/mp4")
-			.appendTo($el);
-		return $el;
-	} else return "";
+	return $("<img/>")
+	.attr("src", item.thumbnail)
+	.attr("title", item.title)
+	.attr("data-type", item.type)
+	.attr("data-id", item.id);
 };
 
 window.app = {
