@@ -48,3 +48,23 @@
 #insert #page_actions {
 	display: none;
 }
+
+#editor img.selected {
+	box-shadow: 0px 6px 11px 1px #333;
+}
+
+#editor {
+	box-shadow: 0 0 2px gray;
+}
+
+#screenw-input {
+	display: block;
+	margin: auto;
+	width: 60%;
+}
+
+#screenw-div {
+	font-weight: bold;
+	padding-top: 20px;
+	text-align: center;
+}

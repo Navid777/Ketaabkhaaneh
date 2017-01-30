@@ -88,4 +88,22 @@ $(function() {
 		$("#editor").trumbowyg("insertMedia", 
 				app.current.renderItemForEditor($(this).data('item')));
 	});
+	document.execCommand('enableObjectResizing', false, false);
+
+  //NOTE: this should be updated if the layout of article changes
+  var getArticleWidth = function(screenWidth) {
+    if (screenWidth > 1186) return 702;
+    if (screenWidth > 978) return 569;
+    if (screenWidth > 754) return 422;
+    return screenWidth - 92;
+  };
+
+  $("#screenw").text("1920");
+  $("#screenw-input").val(1920);
+  $("#editor").width(getArticleWidth(1920));
+  $("#screenw-input").on('change input', function(e) {
+    var width = $("#screenw-input").val();
+    $("#screenw").text(width);
+    $("#editor").width(getArticleWidth(width));
+  });
 });

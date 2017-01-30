@@ -337,12 +337,89 @@ jQuery.trumbowyg = {
 
             removeformat: {},
 
-						floatLeft: {},
-						floatRight: {},
-						floatNone: {},
+						floatLeft: {
+							hasIcon:false
+						},
+						floatRight: {
+							hasIcon:false
+						},
+						floatNone: {
+							hasIcon:false
+						},
 
-						blockDisplay: {},
-						inlineDisplay: {},
+						blockDisplay: {
+							hasIcon:false
+						},
+						inlineDisplay: {
+							hasIcon:false
+						},
+
+						imageSize: {
+							customBuild: function($ed, $box, $group) {
+								var $el = $("<div/>").addClass('multi imgcontrols'),
+									$pixelInput = $("<input/>")
+										.attr('type', 'number')
+										.css('width', '150px'),
+									$percentInput = $("<input/>")
+										.attr('type', 'range')
+										.css('width', '150px'),
+									$button = $("<button/>")
+										.css('width', '45px');
+								$percentInput.hide().appendTo($el);
+								$pixelInput.appendTo($el);
+								$button.text('px').appendTo($el);
+								var updatePixels = function($img) {
+									var w = $img.width();
+									$pixelInput.val(w);
+								}, updatePercent = function($img) {
+									var w = $img.width(),
+										pw = $img.parent().width();
+									$percentInput.val(100*w/pw);
+								};
+								$ed.on('click', 'img', function(e) {
+									var $img = $(this);
+									updatePixels($img);
+									updatePercent($img);
+									if ($img.context.style && $img.context.style.width &&
+									    $img.context.style.width.indexOf('%') != -1) {
+										$pixelInput.hide();
+										$percentInput.show();
+										$button.text($percentInput.val() + "%");
+									} else {
+										$percentInput.hide();
+										$pixelInput.show();
+										$button.text("px");
+									}
+								});
+								$button.on('click', function(e) {
+									if ($button.text() == "px") {
+										$pixelInput.hide();
+										$percentInput.show();
+										$button.text($percentInput.val() + "%");
+										t.$selected.css('width', $percentInput.val() + "%");
+									} else {
+										$percentInput.hide();
+										$pixelInput.show();
+										$button.text("px");
+										t.$selected.css('width', $pixelInput.val() + 'px');
+									}
+									$button.blur();
+								});
+								$pixelInput.on('change', function() {
+									if (!t.$selected) return;
+									t.$selected.css('width', $pixelInput.val() + 'px');
+									updatePercent(t.$selected);
+
+								});
+								$percentInput.on('change input', function() {
+									if (!t.$selected) return;
+									t.$selected.css('width', $percentInput.val() + '%');
+									$button.text($percentInput.val() + '%');
+									updatePixels(t.$selected);
+								});
+								return $el;
+							}
+						},
 
             fullscreen: {
                 class: 'trumbowyg-not-disable'
@@ -361,10 +438,14 @@ jQuery.trumbowyg = {
                 dropdown: ['createLink', 'unlink']
             },
 						floating: {
-							dropdown: ['floatLeft', 'floatRight', 'floatNone']
+								dropdown: ['floatLeft', 'floatNone', 'floatRight'],
+								hasIcon: false,
+								imgControls: true
 						},
 						displaying: {
-							dropdown: ['blockDisplay', 'inlineDisplay']
+								dropdown: ['blockDisplay', 'inlineDisplay'],
+								hasIcon: false,
+								imgControls: true
 						}
         };
 
@@ -403,6 +484,7 @@ jQuery.trumbowyg = {
                 ['removeformat'],
 								['floating'],
 								['displaying'],
+								['imageSize'],
                 ['fullscreen']
             ],
             // For custom button definitions
@@ -459,6 +541,7 @@ jQuery.trumbowyg = {
 
             t.buildEditor();
             t.buildBtnPane();
+						t.$box.find('.imgcontrols').parent().hide();
 
             t.fixedBtnPaneEvents();
 
@@ -549,11 +632,21 @@ jQuery.trumbowyg = {
                 debounceButtonPaneStatus;
 
             t.$ed
-							  .on('click', 'img', function () {
+							  .on('click', 'img', function (e) {
+									t.$ed.find("img.selected").removeClass("selected");
+									$(this).addClass("selected");
 									t.$selected = $(this);
+									e.originalEvent.imgClick = true;
 								})
-								.on('click', 'video', function () {
-									t.$selected = $(this);
+								.on('click', function (e) {
+									if (!e.originalEvent.imgClick) {
+										t.$ed.find("img.selected").removeClass("selected");
+										t.$selected = null;
+									}
+									if (t.$selected)
+										t.$box.find('.imgcontrols').parent().show();
+									else
+										t.$box.find('.imgcontrols').parent().hide();
 								})
                 .on('keydown', function (e) {
                     composition = t.o.useComposition && (e.which === 229);
@@ -677,7 +770,9 @@ jQuery.trumbowyg = {
                     try { // Prevent buildBtn error
                         var $item;
 
-                        if (t.isSupportedBtn(btn)) { // It's a supported button
+												if (t.btnsDef[btn].customBuild) {
+														$item = t.btnsDef[btn].customBuild(t.$ed, $.box, t.$btnGroup);
+												} else if (t.isSupportedBtn(btn)) { // It's a supported button
                             $item = t.buildBtn(btn);
                         }
 
@@ -699,11 +794,12 @@ jQuery.trumbowyg = {
                 btn = t.btnsDef[btnName],
                 isDropdown = btn.dropdown,
                 hasIcon = btn.hasIcon != null ? btn.hasIcon : true,
+								imgControls = btn.imgControls,
                 textDef = t.lang[btnName] || btnName,
 
                 $btn = $('<button/>', {
                     type: 'button',
-                    class: prefix + btnName + '-button ' + (btn.class || '') + (!hasIcon ? ' ' + prefix + 'textual-button' : ''),
+                    class: prefix + btnName + '-button ' + (btn.class || '') + (!hasIcon ? ' ' + prefix + 'textual-button' : '') + (imgControls ? ' imgcontrols' : ''),
                     html: t.hasSvg && hasIcon ? '<svg><use xlink:href="' + t.svgPath + '#' + prefix + (btn.ico || btnName).replace(/([A-Z]+)/g, '-$1').toLowerCase() + '"/></svg>' : (btn.text || btn.title || t.lang[btnName] || btnName),
                     title: (btn.title || btn.text || textDef) + ((btn.key) ? ' (Ctrl + ' + btn.key + ')' : ''),
                     tabindex: -1,

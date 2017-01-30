@@ -89,11 +89,10 @@ class ArticleAdmin(admin.ModelAdmin):
                 continue
 
             tag = "{% " + template_tag + " id=" + img['data-id'] + " ";
-            for attr in ['height', 'width', 'style']:
-                if img.has_attr(attr):
-                    tag += attr + "=\"" + img[attr] + "\" ";
-                else:
-                    tag += attr + "=None ";
+            if img.has_attr('style'):
+                tag += "style=\"" + img['style'] + "\" ";
+            else:
+                tag += "style=None ";
             tag += "render_type=render_type %}"
             img.replace_with(tag)
 

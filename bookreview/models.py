@@ -177,7 +177,7 @@ class Video(models.Model):
 
         for i in xrange(18, 0, -1):
             clip = clip.cutout(0.1+i*step, step+i*step)
-        clip = clip.resize((100, 100))
+        clip = clip.resize(width=100)
 
         temp = tempfile.NamedTemporaryFile(suffix='.gif')
         clip.write_gif(temp.name, fps=12)

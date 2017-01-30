@@ -165,6 +165,9 @@
   width: auto;
   line-height: 35px;
 }
+.trumbowyg-button-pane div.multi * {
+	display: inline-block;
+}
 .trumbowyg-button-pane.trumbowyg-disable button:not(.trumbowyg-not-disable):not(.trumbowyg-active), .trumbowyg-disabled .trumbowyg-button-pane button:not(.trumbowyg-not-disable):not(.trumbowyg-viewHTML-button) {
   opacity: 0.2;
   cursor: default;

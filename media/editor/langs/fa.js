@@ -50,8 +50,12 @@ jQuery.trumbowyg.langs.fa = {
 		floatRight: 'شناور به راست',
 		floatNone: 'ناشناور',
 
+		floating: 'شناور',
+
 		blockDisplay: 'نمایش بلوکی',
 		inlineDisplay: 'نمایش درخط',
+
+		displaying: 'نمایش',
 
     fullscreen: 'تمام‌صفحه',
 

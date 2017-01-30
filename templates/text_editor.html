@@ -25,6 +25,10 @@
 {% block content_title %}{% endblock %}
 
 {% block content %}
+    <div>
+      <input type="range" id="screenw-input" min="100" max="1920" />
+      <div id="screenw-div">Screen Width: <span id="screenw"></span></div>
+    </div>
 		<div id="edit">
       <div id="editor">{{ object.render_for_editing|safe }}</div>
     </div>
