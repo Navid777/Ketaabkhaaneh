@@ -1,6 +1,9 @@
+beautifulsoup4==4.5.3
+bs4==0.0.1
 decorator==4.0.10
 Django==1.10.5
 imageio==2.1.1
+lxml==3.7.2
 moviepy==0.2.2.11
 numpy==1.11.3
 olefile==0.44
