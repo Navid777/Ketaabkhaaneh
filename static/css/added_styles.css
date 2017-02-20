@@ -1,5 +1,6 @@
 body {
 	background-color: #ece4cb;
+    font-family: "IRANSans";
 }
 
 .table .table {
@@ -30,12 +31,12 @@ a.muted:hover, a.muted:focus {
 .dropdown-submenu:hover > a,
 .dropdown-submenu:focus > a,
 .dropdown-menu > .active > a,
-.dropdown-menu > .active > a.:hover,
+.dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
 	color: white;
 	background-color: #b60000;
 	background-image: -moz-linear-gradient(top, #c00000, #a70000);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c00000) to(#a70000));
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c00000), to(#a70000));
 	background-image: -o-linear-gradient(top, #c00000, #a70000);
 	background-image: linear-gradient(to bottom, #c00000, #a70000);
 	background-repeat: repeat-x;
@@ -83,7 +84,7 @@ a.muted:hover, a.muted:focus {
 .nav-list > .active > a:focus {
 	color: white;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
-	background-color: #c000000;
+	background-color: #c00000;
 }
 
 .nav-pills > .active > a,
@@ -166,12 +167,12 @@ body {
     max-width: 1170px;
 }
 p.pdf-reader {
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
-    font-size: 20px;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
+    font-size: 17px;
 }
 p.article-issue {
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
-    font-size: 20px;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
+    font-size: 17px;
     margin-bottom: 15px;
 }
 .search-box {
@@ -231,7 +232,7 @@ p.article-issue {
 ul.admin-links {
     padding: 10px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
-    font-family: Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Arial,  sans-serif;
 }
 ul.admin-links li {
     border-left: 1px solid #C1C0AA;
@@ -275,23 +276,23 @@ li.current {
     margin-bottom: 20px;
 }
 .pagination {
-    font-family: Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Arial,  sans-serif;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-size: 12px;
+    font-size: 9px;
 }
 .pagination a {
     padding: 2px 10px !important;
-}bp
+}
 .text-error {
     color: #C00000 !important;
 }
 ul.bp-navtext {
-    float: left;
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    float: right;
+    font-family: IRANSans,  Helvetica,  Arial,  sans-serif;
     font-weight: normal;
-    font-size: 19px;
+    font-size: 16px;
     text-transform: uppercase;
     margin-bottom: 0px;
 }
@@ -327,27 +328,27 @@ ul.thumbnails {
     margin-top: 10px;
 }
 h1 {
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 45px;
     text-align: right;
     padding: 0px 0px 5px 0px;
     margin: -5px 0px 0px 0px;
     text-transform: uppercase;
 }
 h2 {
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 25px;
     text-align: right;
     padding: 0px 0px 5px 0px;
     margin: -5px 0px 0px 0px;
     text-transform: uppercase;
 }
 h3 {
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 19px;
     line-height: 26px;
     padding: 0px 0px 10px 0px;
     margin: 0px 0px 0px 0px;
@@ -357,9 +358,9 @@ h3 strong {
     color: #222;
 }
 h4 {
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 19px;
     padding: 0px 0px 5px 0px;
     margin: 0px 0px 0px 0px;
     text-transform: uppercase;
@@ -389,17 +390,17 @@ ol {
 }
 p.genre-links {
     text-align: right;
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 15px;
     color: #C1C0AA;
     margin: 0 0 10px 0;
 }
 li.recent-issues {
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     text-transform: none;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 19px;
     padding: 5px 0;
     list-style: none;
 }
@@ -416,11 +417,11 @@ li.recent-issues a:hover {
     color: #8d0000 !important;
 }
 li.recent-posts {
-    font-family: "Droid Serif",  "Times New Roman",  Times,  serif;
+    font-family: "IRANSans",  "Times New Roman",  Times,  serif;
     text-transform: none;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 11px;
+    line-height: 11px;
     padding: 5px 0;
     list-style: disc;
 }
@@ -451,9 +452,9 @@ li.recent-posts a:hover {
     margin-right: 20px;
     text-align: right;
     color: #777777;
-    font-family: "Droid Serif",  "Times New Roman",  Times,  serif;
-    font-size: 12px;
-    line-height: 15px;
+    font-family: "IRANSans",  "Times New Roman",  Times,  serif;
+    font-size: 9px;
+    line-height: 12px;
 }
 .book-details .book-data p.author-small {
     font-style: italic;
@@ -558,10 +559,10 @@ hr.divider {
     border-top: 1px solid #C1C0AA;
     border-left: 1px solid #C1C0AA;
     border-right: 1px solid #C1C0AA;
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 21px;
+    font-size: 17px;
+    line-height: 18px;
     padding: 5px;
     text-transform: uppercase;
     -webkit-border-top-right-radius: 10px;
@@ -622,18 +623,18 @@ hr.divider {
     border-top: 1px solid #C1C0AA;
     border-left: 1px solid #C1C0AA;
     border-right: 1px solid #C1C0AA;
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 21px;
+    font-size: 17px;
+    line-height: 18px;
     padding: 5px;
     text-transform: uppercase;
 }
 .sidebar-footer {
     text-align: left;
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 21px;
     padding: 10px 0px;
     text-transform: uppercase;
@@ -646,9 +647,9 @@ hr.divider {
     border-top: 1px solid #C1C0AA;
     border-left: 1px solid #C1C0AA;
     border-right: 1px solid #C1C0AA;
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 21px;
     padding: 10px 20px;
     text-transform: uppercase;
@@ -673,30 +674,30 @@ hr.divider {
     margin-bottom: 0px;
 }
 .read-full {
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     color: #AA2624;
     text-align: left;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     padding: 10px 0 0 0;
     margin: 0px;
 }
 p.author-small {
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     color: #666;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     padding-top: -4px;
     margin-bottom: 10px;
     text-align: right;
     font-style: italic;
 }
 p.contributor-small {
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     color: #666;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     margin-top: -10px;
     margin-bottom: 20px;
     text-align: center;
@@ -731,9 +732,9 @@ a.bp-button {
     padding: 5px 12px 3px 12px;
     background-color: #AA2624;
     color: #FFFFFF;
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     text-transform: uppercase;
     position: absolute;
     left: 0px;
@@ -757,7 +758,7 @@ a.bp-button {
     margin-bottom: 10px;
 }
 .facets p {
-    font-family: Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Arial,  sans-serif;
     font-weight: bold;
     margin-bottom: 2px;
 }
@@ -773,9 +774,9 @@ a.bp-button-left {
     padding: 5px 12px 3px 12px;
     background-color: #AA2624;
     color: #FFFFFF;
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     text-transform: uppercase;
     position: absolute;
     right: 0px;
@@ -817,9 +818,9 @@ a.bp-button-left {
     padding-bottom: 10px;
     margin-bottom: 20px;
     margin-top: 20px;
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 19px;
     color: #666;
 }
 .affiliate-links p {
@@ -847,7 +848,7 @@ a.bp-button-left {
 }
 img.nowrap {
     float: none !important;
-    clear: all !important;
+    clear: both !important;
 }
 footer {
     z-index: 1000;
@@ -859,14 +860,14 @@ footer {
     border-top: 1px solid #C1C0AA;
     color: #FFFFFF;
     text-align: right;
-    font-family: Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Arial,  sans-serif;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 12px;
 }
 footer h3 {
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IranSans,  Helvetica,  Arial,  sans-serif;
     color: #fff;
-    font-size: 22px;
+    font-size: 19px;
     text-align: right;
     text-transform: uppercase;
     padding-top: 10px;
@@ -914,9 +915,9 @@ footer a:hover {
 }
 .breadcrumbs {
     padding-right: 10px;
-    font-family: BenchNine,  Helvetica,  Arial,  sans-serif;
+    font-family: IRANSans,  Helvetica,  Arial,  sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 15px;
     text-transform: uppercase;
     color: #666;
     display: block;
