@@ -6,7 +6,11 @@
 {% elif render_type == 'publish' %}
 <video controls
      {% if style %}style="{{ style }}"{% endif %}>
+	{% if video.extention == video.MP4 %}
   <source src="{{ video.video.url }}" type="video/mp4">
+	{% elif video.extention == video.WEBM %}
+	<source src="{{ video.video.url }}" type="video/webm">
+	{% endif %}
   برای دیدن ویدئو لطفا بروزر خود را به‌روز کنید.
 </video>
 {% endif %}

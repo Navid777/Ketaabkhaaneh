@@ -158,6 +158,12 @@ class Video(models.Model):
     title = models.CharField(max_length=256)
     video = models.FileField(upload_to=settings.VIDEO_UPLOAD_TO)
     thumbnail = models.FileField(upload_to=settings.VIDEO_UPLOAD_TO, blank=True)
+    WEBM = 1
+    MP4 = 2
+    extention = models.IntegerField(choices=(
+        (WEBM, 'WebM Video File'),
+        (MP4, 'MP4 Video File'),
+    ))
     date_added = models.DateTimeField(default=datetime.datetime.now)
     deleted = models.BooleanField(default=False)
 
@@ -173,10 +179,10 @@ class Video(models.Model):
 
         clip = VideoFileClip(self.video.path)
 
-        step = (clip.duration - 0.1) / 19
+        step = (clip.duration - 0.3) / 19
 
-        for i in xrange(18, 0, -1):
-            clip = clip.cutout(0.1+i*step, step+i*step)
+        for i in xrange(18, -1, -1):
+            clip = clip.cutout(0.3+i*step, step+i*step)
         clip = clip.resize(width=100)
 
         temp = tempfile.NamedTemporaryFile(suffix='.gif')

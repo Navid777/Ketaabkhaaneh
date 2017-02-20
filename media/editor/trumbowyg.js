@@ -1280,6 +1280,7 @@ jQuery.trumbowyg = {
 					var t = this;
 					if (t.noSelectedElement()) return;
 					t.$selected.css('display', 'block');
+					t.$selected.css('margin', 'auto');
 				},
 				inlineDisplay: function () {
 					var t = this;
