@@ -86,16 +86,24 @@ $(function() {
 	$("#show_videos").on('click', app.show_videos);
 	$("#insert .content").on('click', 'div.inserter', function() {
 		$("#editor").trumbowyg("insertMedia", 
-				app.current.renderItemForEditor($(this).data('item')));
+			app.current.renderItemForEditor($(this).data('item')));
 	});
 	document.execCommand('enableObjectResizing', false, false);
 
+	function getScrollBarWidth() {
+		var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
+			widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
+		$outer.remove();
+		return 100 - widthWithScroll;
+	};
+
   //NOTE: this should be updated if the layout of article changes
   var getArticleWidth = function(screenWidth) {
-    if (screenWidth > 1186) return 702;
-    if (screenWidth > 978) return 569;
-    if (screenWidth > 754) return 422;
-    return screenWidth - 92;
+		var sw = getScrollBarWidth();
+    if (screenWidth > 1186) return 702 + sw;
+    if (screenWidth > 978) return 569 + sw;
+    if (screenWidth > 754) return 422 + sw;
+    return screenWidth - 92 + sw;
   };
 
   $("#screenw").text("1920");
