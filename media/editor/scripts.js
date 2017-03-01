@@ -64,7 +64,7 @@ window.app = {
 $(function() {
   $("#editor").trumbowyg({
     lang: 'fa',
-		autogrow: true
+		autogrow: false
   });
   $("#save_button").on('click', function() {
     $("#save_message").text('Saving...');
