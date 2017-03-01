@@ -90,12 +90,20 @@ $(function() {
 	});
 	document.execCommand('enableObjectResizing', false, false);
 
+	function getScrollBarWidth() {
+		var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
+			widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
+		$outer.remove();
+		return 100 - widthWithScroll;
+	};
+
   //NOTE: this should be updated if the layout of article changes
   var getArticleWidth = function(screenWidth) {
-    if (screenWidth > 1186) return 702;
-    if (screenWidth > 978) return 569;
-    if (screenWidth > 754) return 422;
-    return screenWidth - 92;
+		var scrollWidth = getScrollBarWidth();
+    if (screenWidth > 1186) return 702 + scrollWidth;
+    if (screenWidth > 978) return 569 + scrollWidth;
+    if (screenWidth > 754) return 422 + scrollWidth;
+    return screenWidth - 92 + scrollWidth;
   };
 
   $("#screenw").text("1920");
